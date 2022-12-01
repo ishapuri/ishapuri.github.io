@@ -114,10 +114,10 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:ishapuri@college.harvard.edu"
+      url: "mailto:ishapuri@college.harvard.edu"
     - label: "LinkedIn"
       icon: "fas fa-fw fa-link"
-      # url: "https://www.linkedin.com/in/isha-puri/"
+      url: "https://www.linkedin.com/in/isha-puri/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: # "https://twitter.com/"
@@ -126,13 +126,13 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/ishapuri"
+      url: "https://github.com/ishapuri"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: # "https://instagram.com/"
     - label: "Google Scholar"
       icon: "fas fa-fw fa-link"
-      # url: "https://scholar.google.com/citations?user=MCBeG1UAAAAJ&hl=en"
+      url: "https://scholar.google.com/citations?user=MCBeG1UAAAAJ&hl=en"
 
 # Site Footer
 footer:
