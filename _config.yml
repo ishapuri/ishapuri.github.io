@@ -105,10 +105,12 @@ analytics:
 # Site Author
 author:
   name             : "Isha Puri"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/bio-photo.jpg"
   bio              : "Senior at Harvard, Interpretability / NLP, prev @ IBM Research"
   location         : "Cambridge, MA; NY, NY"
-  email            : "ishapuri@college.harvard.edu"
+  email            : ishapuri@college.harvard.edu
+  github           : "ishapuri"
+  linkedin         : "isha-puri/"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
