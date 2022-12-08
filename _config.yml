@@ -133,9 +133,7 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
-    - label: "LinkedIn"
-      icon: "ai ai-semantic-scholar"
-      url: "https://www.linkedin.com/in/isha-puri/"
+    
 
 # Site Footer
 footer:
