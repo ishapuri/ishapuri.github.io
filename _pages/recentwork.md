@@ -8,6 +8,8 @@ author_profile: true
 comments: true
 ---
 
+<h1>Publications</h1>
+
 <h2>2022</h2>
 
 <ul>
