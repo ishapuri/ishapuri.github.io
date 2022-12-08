@@ -20,7 +20,7 @@ comments: true
 	</li>
 	<li>
 		<a href = "https://open-xai.github.io/">OpenXAI: Towards a Transparent Evaluation of Model Explanations</a>
-		Chirag Agarwal, Satyapriya Krishna, Eshika Saxena, Martin Pawelczyk, Nari Johnson, <br><strong>Isha Puri*</strong>, Marinka Zitnik, and Himabindu Lakkaraju
+		Chirag Agarwal, Satyapriya Krishna, Eshika Saxena, Martin Pawelczyk, Nari Johnson, <br><strong>Isha Puri</strong>, Marinka Zitnik, and Himabindu Lakkaraju
 		<br><i>NeurIPS, 2022</i>
 		
 	</li>
@@ -30,7 +30,7 @@ comments: true
 <ul>
 	<li>
 		<a href = "https://proceedings.neurips.cc/paper/2021/file/b538f279cb2ca36268b23f557a831508-Paper.pdf">CoFrNets: Interpretable Neural Architecture Inspired by Continued Fractions</a>
-		<br><strong>Isha Puri*</strong>, Amit Dhurandhar, Tejaswini Pedapati, Kartikeyan Shanmugam, Dennis Wei, and Kush R. Varshney
+		<br><strong>Isha Puri</strong>, Amit Dhurandhar, Tejaswini Pedapati, Kartikeyan Shanmugam, Dennis Wei, and Kush R. Varshney
 		<br><i>NeurIPS, 2021</i>
 	</li>
 </ul>
