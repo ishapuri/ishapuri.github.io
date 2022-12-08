@@ -1,9 +1,9 @@
 ---
-title:  "Publications"
+title:  "Recent Work"
 layout: archive 
 classes: 
   - wide
-permalink: /publications/
+permalink: /recentwork/
 author_profile: true
 comments: true
 ---

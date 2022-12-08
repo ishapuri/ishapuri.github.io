@@ -1,7 +1,7 @@
 # main links
 main:
    - title: "Recent Work"
-     url: /publications/
+     url: /recentwork/
    - title: "CV"
      url: /assets/pdfs/CV.pdf
   # - title: "Projects"
