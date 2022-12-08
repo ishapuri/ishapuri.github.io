@@ -1,9 +1,55 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
-search: false
 ---
 
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+body {
+#   font-family: "Roboto",sans-serif;
+  font-size: 16px;
+#  font-family: "Libre Franklin", sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+h2 {
+    margin-top: 3px;
+}
+
+ul + h2 {
+    margin-bottom: 0px;
+}
+
+.masthead {
+  font-size: 22px;
+}
+
+.sidebar {
+  opacity: 1;
+}
+
+td {
+  font-size: 16px;
+  border: transparent;
+}
+
+td.date-cell {
+  text-align: right;
+}
+
+table {
+  border-right:solid 20px transparent;
+}
