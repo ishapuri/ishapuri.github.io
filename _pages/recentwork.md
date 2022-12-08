@@ -1,5 +1,5 @@
 ---
-title:  "Recent Work"
+title:  ""
 layout: archive 
 classes: 
   - wide
