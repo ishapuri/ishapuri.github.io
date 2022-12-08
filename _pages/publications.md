@@ -12,7 +12,7 @@ comments: true
 
 <ul>
 	<li>
-		Reconsidering the Algorithmic Fairness of Race Adjustment in Pulmonary Function Equations</a>
+		Reconsidering the Algorithmic Fairness of Race Adjustment in Pulmonary Function Equations
 		<br><strong>Isha Puri*</strong>, Neil Sehgal*, Usha Bhalla*.
 		<br><i>AAAI AI For Social Good Workshop, 2023</i>
 	</li>
