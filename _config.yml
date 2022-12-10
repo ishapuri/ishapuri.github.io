@@ -134,6 +134,8 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "Google Scholar"
+      icon: "https://scholar.google.com/citations?user=MCBeG1UAAAAJ&hl=en"
     
 
 
