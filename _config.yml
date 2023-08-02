@@ -109,12 +109,12 @@ analytics:
 author:
   name             : "Isha Puri"
   avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "Incoming MIT AI/NLP PhD student, Senior at Harvard, prev @ IBM Research AI"
+  bio              : "MIT AI/NLP PhD student, BA in CS @ Harvard, prev @ IBM Research AI"
   location         : "Cambridge, MA; NY, NY"
   email            : ishapuri@college.harvard.edu
   github           : "ishapuri"
   linkedin         : "isha-puri/"
-  google-scholar   : "https://scholar.google.com/citations?user=MCBeG1UAAAAJ&hl=en"
+  google-scholar   : "https://scholar.google.com/citations?user=y1cVB_wAAAAJ&hl=en&oi=ao"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -136,7 +136,7 @@ author:
       # url: "https://instagram.com/"
     - label: "Google Scholar"
       icon: "ai ai-google-scholar"
-      url: "https://scholar.google.com/citations?user=MCBeG1UAAAAJ&hl=en"
+      url: "https://scholar.google.com/citations?user=y1cVB_wAAAAJ&hl=en&oi=ao"
     
 
 
