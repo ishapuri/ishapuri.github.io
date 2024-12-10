@@ -111,7 +111,7 @@ author:
   avatar           : "/assets/images/bio-photo.jpg"
   bio              : "MIT AI/NLP PhD student, BA in CS @ Harvard, prev @ IBM Research AI"
   location         : "Cambridge, MA; NY, NY"
-  location         : "45-711, MIT"
+  office         : "45-711, MIT"
   email            : ishapuri@mit.edu
   github           : "ishapuri"
   linkedin         : "isha-puri/"
