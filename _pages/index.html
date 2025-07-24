@@ -41,11 +41,44 @@ Curriculum Vitae: <a href = "/assets/pdfs/CV.pdf">CV</a>
 <br><br>
 
 
-<h2 class="section-header">News</h2>
+<h2>News</h2>
+
+<style>
+  .scroll-box {
+    position: relative;
+    overflow-y: scroll;
+    max-height: 400px;
+    scrollbar-width: thin; /* Firefox */
+  }
+
+  .scroll-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, white);
+    pointer-events: none;
+  }
+
+  .scroll-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .left-column {
+    width: 70%;
+    margin-right: 20px;
+  }
+
+  .right-column {
+    width: 45%;
+  }
+</style>
 
 <div class="scroll-container">
-  <!-- LEFT -->
-  <div class="section-box left-column scroll-box">
+  <!-- LEFT: NEWS LIST -->
+  <div class="scroll-box left-column">
     <ul>
       <li>[July 2025] <a href="https://arxiv.org/abs/2507.16806" target="_blank">New Paper!</a> We trained LLMs to analyze their own uncertainty and better calibrate their confidence!</li>
       <li>[July 2025] Invited talk at Cohere AI</li>
@@ -55,26 +88,28 @@ Curriculum Vitae: <a href = "/assets/pdfs/CV.pdf">CV</a>
       <li>[Feb 2025] Excited to serve as Associate Program Chair for NeurIPS 2025!</li>
       <li>
         <details>
-          <summary>[Feb 2025] Invited talks at RedHat (2/7/25) and IBM Research AI (2/20/25) on scaling LMs. <a href="https://www.youtube.com/watch?v=--3rsQwMN28" target="_blank">[Recording]</a></summary>
+          <summary>[Feb 2025] Giving invited talks at RedHat (2/7/25) and IBM Research AI (2/20/25) on scaling LMs with probabilistic inference. <a href="https://www.youtube.com/watch?v=--3rsQwMN28" target="_blank">[Recording]</a></summary>
           <div>
+            Links to Join:
             <img src="/assets/images/ibm_research_talk_feb20_2025.jpg" style="width:100%; border: 2px solid black; margin-bottom: 10px;">
             <img src="/assets/images/redhat_talk_feb7_2025.png" style="width:100%; border: 2px solid black;">
           </div>
         </details>
       </li>
-      <li>[Feb 2025] Our paper on LM scaling is now on <a href="https://arxiv.org/abs/2502.01618" target="_blank">arXiv</a> — check out the <a href="https://probabilistic-inference-scaling.github.io/" target="_blank">project site</a>!</li>
-      <li>[Dec 2024] Our LLM bias work in mental health was covered by <a href="https://news.mit.edu/2024/study-reveals-ai-chatbots-can-detect-race-but-racial-bias-reduces-response-empathy-1216" target="_blank">MIT News</a> and published in <a href="https://arxiv.org/abs/2405.12021" target="_blank">EMNLP Findings</a>.</li>
+      <li>[Feb 2025] Our paper on probabilistic inference for LM scaling is now on <a href="https://arxiv.org/abs/2502.01618" target="_blank">arXiv</a>! Check out the <a href="https://probabilistic-inference-scaling.github.io/" target="_blank">project website</a>.</li>
+      <li>[Dec 2024] Our work on studying bias in LLMs for mental health support was covered by <a href="https://news.mit.edu/2024/study-reveals-ai-chatbots-can-detect-race-but-racial-bias-reduces-response-empathy-1216" target="_blank">MIT News</a> and published in <a href="https://arxiv.org/abs/2405.12021" target="_blank">EMNLP Findings</a>.</li>
     </ul>
     <div class="scroll-fade"></div>
   </div>
 
-  <!-- RIGHT -->
-  <div class="section-box right-column scroll-box">
+  <!-- RIGHT: TWITTER BLOCK -->
+  <div class="scroll-box right-column">
     <blockquote class="twitter-tweet">
       <p lang="en" dir="ltr">
         [1/x] can we scale small, open LMs to o1 level? Using classical probabilistic inference methods, YES! Joint <a href="https://twitter.com/MIT_CSAIL">@MIT_CSAIL</a> / <a href="https://twitter.com/RedHat">@RedHat</a> AI Innovation Team work introduces a particle filtering approach to scaling inference w/o any training! check out <a href="https://probabilistic-inference-scaling.github.io/">scaling.github.io</a>
+        <a href="https://twitter.com/ishapuri101/status/1887308434321940928">pic.twitter.com/jcAxIRyypU</a>
       </p>
-      — Isha Puri (@ishapuri101)
+      &mdash; Isha Puri (@ishapuri101)
     </blockquote>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <div class="scroll-fade"></div>
