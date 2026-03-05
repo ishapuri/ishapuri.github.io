@@ -323,7 +323,7 @@ Outside of research, I:
 
 <script>
   window.addEventListener('load', function() {
-    let showSelectedOnly = false;
+    let showSelectedOnly = true; // Default to on
     const toggleButton = document.getElementById('selectedPublicationsToggle');
     const toggleThumb = document.getElementById('toggleThumb');
     
@@ -364,11 +364,7 @@ Outside of research, I:
       }
     }
     
-    toggleButton.onclick = function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      showSelectedOnly = !showSelectedOnly;
-      
+    function applyFilter() {
       // Update toggle visual state
       updateToggleVisual(showSelectedOnly);
       
@@ -411,6 +407,16 @@ Outside of research, I:
           }
         }
       });
+    }
+    
+    // Apply filter on page load (default to on)
+    applyFilter();
+    
+    toggleButton.onclick = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      showSelectedOnly = !showSelectedOnly;
+      applyFilter();
     };
     
     // Also make the label clickable
