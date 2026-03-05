@@ -137,10 +137,11 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
 <summary style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
     <h2 style="margin: 0;">Publications</h2>
     <div style="display: flex; align-items: center; gap: 8px;">
-        <label style="font-size: 14px; color: #333; cursor: pointer; user-select: none;">Selected Publications</label>
+        <label style="font-size: 14px; color: #333; cursor: pointer; user-select: none;">All</label>
         <button id="selectedPublicationsToggle" style="position: relative; width: 50px; height: 26px; background-color: #ccc; border: none; border-radius: 13px; cursor: pointer; outline: none; transition: background-color 0.3s; padding: 0;">
             <span id="toggleThumb" style="position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background-color: white; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></span>
         </button>
+        <label style="font-size: 14px; color: #333; cursor: pointer; user-select: none;">Selected Publications</label>
     </div>
 </summary>
 
@@ -437,14 +438,14 @@ Outside of research, I:
       applyFilter();
     };
     
-    // Also make the label clickable
-    const label = toggleButton.parentElement.querySelector('label');
-    if (label) {
+    // Also make both labels clickable
+    const labels = toggleButton.parentElement.querySelectorAll('label');
+    labels.forEach(function(label) {
       label.onclick = function(e) {
         e.preventDefault();
         e.stopPropagation();
         toggleButton.click();
       };
-    }
+    });
   });
 </script>
