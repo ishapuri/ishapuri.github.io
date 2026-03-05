@@ -140,9 +140,10 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
 
 
 <h3>Papers</h3>
+<button id="selectedPublicationsToggle" style="margin-bottom: 10px; padding: 8px 16px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">Selected Publications</button>
 <div style="border: 2px solid #ccc; border-radius: 10px; overflow-y: scroll; height: 500px; padding: 10px; scrollbar-width: auto;">
     <ul style="list-style-type: none; padding: 0; margin: 0;">
-      <li>
+      <li class="selected-publication">
         <span>
             <span style="color: #007bff;">Escaping the Mode: Multi-Answer Reinforcement Learning in LMs</span>
         </span>
@@ -152,7 +153,7 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
     </li>
     <br>
       
-      <li>
+      <li class="selected-publication">
             <a href="https://rl-calibration.github.io/" target="_blank" rel="noopener noreferrer">
                 Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty
             </a>
@@ -180,7 +181,7 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
             [<a href="https://github.com/YuexingHao/MedPAIR" target="_blank" rel="noopener noreferrer">Code</a>]
         </li>
         <br>
-        <li>
+        <li class="selected-publication">
             <a href="https://probabilistic-inference-scaling.github.io/" target="_blank" rel="noopener noreferrer">Rollout Roulette: A Probabilistic Inference Approach to LLM Inference-Time Scaling with Particle-Based Monte Carlo Methods
             </a>
             <br><strong>Isha Puri</strong>, Shiv Sudalairaj, GX Xu, Kai Xu, Akash Srivastava
@@ -235,7 +236,7 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
             [<a href="https://open-xai.github.io/" target="_blank" rel="noopener noreferrer">Website</a>]
         </li>
         <br>
-        <li>
+        <li class="selected-publication">
             <a href="https://arxiv.org/abs/2506.05586" target="_blank" rel="noopener noreferrer">CoFrNets: Interpretable Neural Architecture Inspired by Continued Fractions</a>
             <br><strong>Isha Puri</strong>, Amit Dhurandhar, Tejaswini Pedapati, Kartikeyan Shanmugam, Dennis Wei, and Kush R. Varshney
             <br><i>NeurIPS, 2021</i>
@@ -313,4 +314,70 @@ Outside of research, I:
   gtag('js', new Date());
 
   gtag('config', 'G-LMMBHBT8FJ');
+</script>
+
+<script>
+  (function() {
+    let showSelectedOnly = false;
+    const toggleButton = document.getElementById('selectedPublicationsToggle');
+    
+    if (toggleButton) {
+      // Find the publications list - it's the ul inside the div with border
+      const papersHeading = Array.from(document.querySelectorAll('h3')).find(h => h.textContent.trim() === 'Papers');
+      let publicationsList = null;
+      
+      if (papersHeading) {
+        const container = papersHeading.nextElementSibling;
+        if (container && container.tagName === 'DIV') {
+          publicationsList = container.querySelector('ul');
+        }
+      }
+      
+      if (publicationsList) {
+        toggleButton.addEventListener('click', function() {
+          showSelectedOnly = !showSelectedOnly;
+          
+          // Get all children of the ul (both li and br elements)
+          const allChildren = Array.from(publicationsList.children);
+          
+          allChildren.forEach(function(element) {
+            if (element.tagName === 'LI') {
+              if (showSelectedOnly) {
+                // Hide all publications that are not selected
+                if (!element.classList.contains('selected-publication')) {
+                  element.style.display = 'none';
+                } else {
+                  element.style.display = 'list-item';
+                }
+              } else {
+                // Show all publications
+                element.style.display = 'list-item';
+              }
+            } else if (element.tagName === 'BR') {
+              // Handle <br> tags - hide them if adjacent <li> is hidden
+              if (showSelectedOnly) {
+                const prevLi = element.previousElementSibling;
+                const nextLi = element.nextElementSibling;
+                
+                // Hide <br> if previous <li> is hidden or next <li> is hidden
+                const prevHidden = prevLi && prevLi.tagName === 'LI' && prevLi.style.display === 'none';
+                const nextHidden = nextLi && nextLi.tagName === 'LI' && nextLi.style.display === 'none';
+                
+                if (prevHidden || nextHidden) {
+                  element.style.display = 'none';
+                } else {
+                  element.style.display = 'block';
+                }
+              } else {
+                element.style.display = 'block';
+              }
+            }
+          });
+          
+          // Update button text
+          toggleButton.textContent = showSelectedOnly ? 'Show All Publications' : 'Selected Publications';
+        });
+      }
+    }
+  })();
 </script>
