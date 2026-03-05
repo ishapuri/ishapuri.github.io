@@ -139,15 +139,17 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
 
 
 
-<h3>Papers</h3>
-<div style="border: 2px solid #ccc; border-radius: 10px; overflow-y: scroll; height: 500px; padding: 10px; scrollbar-width: auto; position: relative;">
-    <div style="position: absolute; top: 10px; right: 10px; display: flex; align-items: center; gap: 8px; z-index: 10;">
+<div style="position: relative; margin-bottom: 10px;">
+    <h3 style="display: inline-block; margin: 0;">Papers</h3>
+    <div style="position: absolute; top: 0; right: 0; display: flex; align-items: center; gap: 8px;">
         <label style="font-size: 14px; color: #333; cursor: pointer; user-select: none;">Selected Publications</label>
         <button id="selectedPublicationsToggle" style="position: relative; width: 50px; height: 26px; background-color: #ccc; border: none; border-radius: 13px; cursor: pointer; outline: none; transition: background-color 0.3s; padding: 0;">
             <span id="toggleThumb" style="position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background-color: white; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></span>
         </button>
     </div>
-    <ul style="list-style-type: none; padding: 0; margin: 0; padding-top: 40px;">
+</div>
+<div style="border: 2px solid #ccc; border-radius: 10px; overflow-y: scroll; height: 500px; padding: 10px; scrollbar-width: auto;">
+    <ul style="list-style-type: none; padding: 0; margin: 0;">
       <li class="selected-publication">
         <span>
             <span style="color: #007bff;">Escaping the Mode: Multi-Answer Reinforcement Learning in LMs</span>
@@ -262,9 +264,7 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
             <br><strong>Isha Puri</strong> and David Cox
             <br><i>IEEE Engineering in Medicine and Biology Conference, 2018</i> 
         </li> 
-    </ul>
-    <h3> Other Projects </h3>
-    <ul style="list-style-type: none; padding: 0; margin: 0;">
+        <br>
         <li>
             DYSCERN - A Scalable, Freely Accessible Machine Learning Application for the Early Detection of Dyslexia
             <br>[<a href="https://ishapuri.github.io/dyscern_video.html" target="_blank" rel="noopener noreferrer">Project Video + Demo</a>]
@@ -329,8 +329,26 @@ Outside of research, I:
     
     if (!toggleButton || !toggleThumb) return;
     
-    // Find the publications list - the button is now inside the div, so we need to find the parent div
-    const container = toggleButton.closest('div[style*="border: 2px solid"]');
+    // Find the publications list - the button is now outside the box
+    // The bordered div is the next sibling after the toggle's parent container
+    const toggleParent = toggleButton.closest('div[style*="position: relative"]');
+    let container = null;
+    
+    if (toggleParent && toggleParent.nextElementSibling) {
+      container = toggleParent.nextElementSibling;
+    }
+    
+    // Fallback: find the div with border that contains a ul
+    if (!container || !container.querySelector('ul')) {
+      const allDivs = document.querySelectorAll('div');
+      for (let div of allDivs) {
+        if (div.querySelector('ul') && (div.style.border || div.getAttribute('style')?.includes('border'))) {
+          container = div;
+          break;
+        }
+      }
+    }
+    
     if (!container) return;
     
     const publicationsList = container.querySelector('ul');
