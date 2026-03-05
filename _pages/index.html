@@ -140,9 +140,14 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
 
 
 <h3>Papers</h3>
-<button id="selectedPublicationsToggle" style="margin-bottom: 10px; padding: 8px 16px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px;">Selected Publications</button>
-<div style="border: 2px solid #ccc; border-radius: 10px; overflow-y: scroll; height: 500px; padding: 10px; scrollbar-width: auto;">
-    <ul style="list-style-type: none; padding: 0; margin: 0;">
+<div style="border: 2px solid #ccc; border-radius: 10px; overflow-y: scroll; height: 500px; padding: 10px; scrollbar-width: auto; position: relative;">
+    <div style="position: absolute; top: 10px; right: 10px; display: flex; align-items: center; gap: 8px; z-index: 10;">
+        <label style="font-size: 14px; color: #333; cursor: pointer; user-select: none;">Selected Publications</label>
+        <button id="selectedPublicationsToggle" style="position: relative; width: 50px; height: 26px; background-color: #ccc; border: none; border-radius: 13px; cursor: pointer; outline: none; transition: background-color 0.3s; padding: 0;">
+            <span id="toggleThumb" style="position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background-color: white; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></span>
+        </button>
+    </div>
+    <ul style="list-style-type: none; padding: 0; margin: 0; padding-top: 40px;">
       <li class="selected-publication">
         <span>
             <span style="color: #007bff;">Escaping the Mode: Multi-Answer Reinforcement Learning in LMs</span>
@@ -317,67 +322,79 @@ Outside of research, I:
 </script>
 
 <script>
-  (function() {
+  window.addEventListener('load', function() {
     let showSelectedOnly = false;
     const toggleButton = document.getElementById('selectedPublicationsToggle');
+    const toggleThumb = document.getElementById('toggleThumb');
     
-    if (toggleButton) {
-      // Find the publications list - it's the ul inside the div with border
-      const papersHeading = Array.from(document.querySelectorAll('h3')).find(h => h.textContent.trim() === 'Papers');
-      let publicationsList = null;
-      
-      if (papersHeading) {
-        const container = papersHeading.nextElementSibling;
-        if (container && container.tagName === 'DIV') {
-          publicationsList = container.querySelector('ul');
-        }
-      }
-      
-      if (publicationsList) {
-        toggleButton.addEventListener('click', function() {
-          showSelectedOnly = !showSelectedOnly;
-          
-          // Get all children of the ul (both li and br elements)
-          const allChildren = Array.from(publicationsList.children);
-          
-          allChildren.forEach(function(element) {
-            if (element.tagName === 'LI') {
-              if (showSelectedOnly) {
-                // Hide all publications that are not selected
-                if (!element.classList.contains('selected-publication')) {
-                  element.style.display = 'none';
-                } else {
-                  element.style.display = 'list-item';
-                }
-              } else {
-                // Show all publications
-                element.style.display = 'list-item';
-              }
-            } else if (element.tagName === 'BR') {
-              // Handle <br> tags - hide them if adjacent <li> is hidden
-              if (showSelectedOnly) {
-                const prevLi = element.previousElementSibling;
-                const nextLi = element.nextElementSibling;
-                
-                // Hide <br> if previous <li> is hidden or next <li> is hidden
-                const prevHidden = prevLi && prevLi.tagName === 'LI' && prevLi.style.display === 'none';
-                const nextHidden = nextLi && nextLi.tagName === 'LI' && nextLi.style.display === 'none';
-                
-                if (prevHidden || nextHidden) {
-                  element.style.display = 'none';
-                } else {
-                  element.style.display = 'block';
-                }
-              } else {
-                element.style.display = 'block';
-              }
-            }
-          });
-          
-          // Update button text
-          toggleButton.textContent = showSelectedOnly ? 'Show All Publications' : 'Selected Publications';
-        });
+    if (!toggleButton || !toggleThumb) return;
+    
+    // Find the publications list - the button is now inside the div, so we need to find the parent div
+    const container = toggleButton.closest('div[style*="border: 2px solid"]');
+    if (!container) return;
+    
+    const publicationsList = container.querySelector('ul');
+    if (!publicationsList) return;
+    
+    function updateToggleVisual(isOn) {
+      if (isOn) {
+        toggleButton.style.backgroundColor = '#3498db';
+        toggleThumb.style.transform = 'translateX(24px)';
+      } else {
+        toggleButton.style.backgroundColor = '#ccc';
+        toggleThumb.style.transform = 'translateX(0)';
       }
     }
-  })();
+    
+    toggleButton.onclick = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      showSelectedOnly = !showSelectedOnly;
+      
+      // Update toggle visual state
+      updateToggleVisual(showSelectedOnly);
+      
+      // Get all list items
+      const allListItems = publicationsList.querySelectorAll('li');
+      
+      allListItems.forEach(function(li) {
+        if (showSelectedOnly) {
+          // Hide all publications that are not selected
+          if (!li.classList.contains('selected-publication')) {
+            li.style.display = 'none';
+          } else {
+            li.style.display = 'list-item';
+          }
+        } else {
+          // Show all publications
+          li.style.display = 'list-item';
+        }
+      });
+      
+      // Handle <br> tags between items
+      const allChildren = Array.from(publicationsList.children);
+      allChildren.forEach(function(element) {
+        if (element.tagName === 'BR') {
+          if (showSelectedOnly) {
+            const prevLi = element.previousElementSibling;
+            const nextLi = element.nextElementSibling;
+            const prevHidden = prevLi && prevLi.tagName === 'LI' && prevLi.style.display === 'none';
+            const nextHidden = nextLi && nextLi.tagName === 'LI' && nextLi.style.display === 'none';
+            element.style.display = (prevHidden || nextHidden) ? 'none' : 'block';
+          } else {
+            element.style.display = 'block';
+          }
+        }
+      });
+    };
+    
+    // Also make the label clickable
+    const label = toggleButton.previousElementSibling;
+    if (label && label.tagName === 'LABEL') {
+      label.onclick = function(e) {
+        e.preventDefault();
+        toggleButton.click();
+      };
+    }
+  });
 </script>
