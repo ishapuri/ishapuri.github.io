@@ -353,9 +353,9 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
 
 <br>
 
-<details>
+<details id=”awards-details”>
 <summary><h2>Awards / Honors</h2></summary>
-<div class=”scroll-box” style=”max-height: 300px; border: 2px solid #ccc; border-radius: 10px; padding: 10px;”>
+<div id=”awards-scroll-box” style=”border: 2px solid #ccc; border-radius: 10px; padding: 10px;”>
   <ul>
       <li> MIT Great Educators Fellowship <br> (MIT EECS)</li>
       <li> National Science Foundation Graduate Research Fellowship </li>
@@ -406,6 +406,22 @@ Outside of research, I:
 </script>
 
 <script>
+  window.addEventListener('load', function() {
+    const awardsDetails = document.getElementById('awards-details');
+    const awardsBox = document.getElementById('awards-scroll-box');
+    if (awardsDetails && awardsBox) {
+      function applyAwardsScrollbox() {
+        if (awardsDetails.open) {
+          awardsBox.style.setProperty('overflow-y', 'scroll', 'important');
+          awardsBox.style.setProperty('height', '300px', 'important');
+          awardsBox.style.setProperty('max-height', '300px', 'important');
+        }
+      }
+      awardsDetails.addEventListener('toggle', applyAwardsScrollbox);
+      applyAwardsScrollbox();
+    }
+  });
+
   window.addEventListener('load', function() {
     let showSelectedOnly = true; // Default to on
     const toggleButton = document.getElementById('selectedPublicationsToggle');
