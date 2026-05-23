@@ -413,10 +413,9 @@ Outside of research, I:
   (function() {
     var toggle = document.getElementById('selectedPublicationsToggle');
     var thumb = document.getElementById('toggleThumb');
-    var isSelected = false;
+    var isSelected = true;
 
-    toggle.addEventListener('click', function() {
-      isSelected = !isSelected;
+    function applyFilter() {
       toggle.style.backgroundColor = isSelected ? '#4a90d9' : '#ccc';
       thumb.style.transform = isSelected ? 'translateX(24px)' : 'translateX(0)';
 
@@ -430,6 +429,13 @@ Outside of research, I:
           child.style.display = isSelected ? 'none' : '';
         }
       });
+    }
+
+    toggle.addEventListener('click', function() {
+      isSelected = !isSelected;
+      applyFilter();
     });
+
+    applyFilter();
   })();
 </script>
