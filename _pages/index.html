@@ -420,13 +420,14 @@ Outside of research, I:
       toggle.style.backgroundColor = isSelected ? '#4a90d9' : '#ccc';
       thumb.style.transform = isSelected ? 'translateX(24px)' : 'translateX(0)';
 
-      var items = document.querySelectorAll('#publications li');
-      items.forEach(function(item) {
-        var show = !isSelected || item.classList.contains('selected-publication');
-        item.style.display = show ? '' : 'none';
-        var next = item.nextElementSibling;
-        if (next && next.tagName === 'BR') {
-          next.style.display = show ? '' : 'none';
+      var ul = document.querySelector('#publications ul');
+      Array.from(ul.children).forEach(function(child) {
+        if (child.tagName === 'LI') {
+          var show = !isSelected || child.classList.contains('selected-publication');
+          child.style.display = show ? '' : 'none';
+          child.style.marginBottom = (isSelected && show) ? '1em' : '';
+        } else if (child.tagName === 'BR') {
+          child.style.display = isSelected ? 'none' : '';
         }
       });
     });
