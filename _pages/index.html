@@ -407,3 +407,27 @@ Outside of research, I:
   gtag('js', new Date());
 
   gtag('config', 'G-LMMBHBT8FJ');
+</script>
+
+<script>
+  (function() {
+    var toggle = document.getElementById('selectedPublicationsToggle');
+    var thumb = document.getElementById('toggleThumb');
+    var isSelected = false;
+
+    toggle.addEventListener('click', function() {
+      isSelected = !isSelected;
+      toggle.style.backgroundColor = isSelected ? '#4a90d9' : '#ccc';
+      thumb.style.transform = isSelected ? 'translateX(24px)' : 'translateX(0)';
+
+      var items = document.querySelectorAll('#publications li');
+      items.forEach(function(item) {
+        if (isSelected) {
+          item.style.display = item.classList.contains('selected-publication') ? '' : 'none';
+        } else {
+          item.style.display = '';
+        }
+      });
+    });
+  })();
+</script>
