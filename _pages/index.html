@@ -422,10 +422,11 @@ Outside of research, I:
 
       var items = document.querySelectorAll('#publications li');
       items.forEach(function(item) {
-        if (isSelected) {
-          item.style.display = item.classList.contains('selected-publication') ? '' : 'none';
-        } else {
-          item.style.display = '';
+        var show = !isSelected || item.classList.contains('selected-publication');
+        item.style.display = show ? '' : 'none';
+        var next = item.nextElementSibling;
+        if (next && next.tagName === 'BR') {
+          next.style.display = show ? '' : 'none';
         }
       });
     });
