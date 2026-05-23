@@ -70,6 +70,27 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
   .right-column {
     width: 45%;
   }
+
+  .publication-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .teaser-img {
+    width: 130px;
+    min-width: 130px;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #e8e8e8;
+    flex-shrink: 0;
+  }
+
+  .publication-details {
+    flex: 1;
+    min-width: 0;
+  }
 </style>
 
 <div class="scroll-container">
@@ -155,22 +176,25 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
 
 <div style="border: 2px solid #ccc; border-radius: 10px; overflow-y: scroll; height: 500px; padding: 10px; scrollbar-width: auto;">
     <ul style="list-style-type: none; padding: 0; margin: 0;">
-      
-      
+
       <li class="selected-publication" data-needs-break-after="false">
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/vpo_teaser.png" alt="VPO teaser">
+          <div class="publication-details">
             <a href="https://arxiv.org/pdf/2605.22817" target="_blank" rel="noopener noreferrer">Vector Policy Optimization: Training for Diversity Improves Test-Time Search</a><br>
             Ryan Bahlous-Boldi, <strong>Isha Puri</strong>, Idan Shenfeld, Akarsh Kumar, Mehul Damani, Sebastian Risi, Omar Khattab, Zhang-Wei Hong, Pulkit Agrawal<br>
             <i>In Submission, 2026</i>
             <br>[<a href="https://arxiv.org/pdf/2605.22817" target="_blank" rel="noopener noreferrer">ArXiv</a>]
-        </li>
-        <br>
-
-
+          </div>
+        </div>
+      </li>
+      <br>
 
       <li class="selected-publication" data-needs-break-after="false">
-        <a href="https://multi-answer-rl.github.io/" target="_blank" rel="noopener noreferrer">
-                Reaching Beyond the Mode: RL for Distributional Reasoning in Language Models
-            </a>
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/multi_rlvr_teaser.png" alt="Multi-RLVR teaser">
+          <div class="publication-details">
+            <a href="https://multi-answer-rl.github.io/" target="_blank" rel="noopener noreferrer">Reaching Beyond the Mode: RL for Distributional Reasoning in Language Models</a>
             <br><strong>Isha Puri</strong>, Mehul Damani, Idan Shenfeld, Marzyeh Ghassemi, Jacob Andreas, Yoon Kim
             <br><i>ICML 2026</i>
             <br><i>⭐Talks @ Jump Trading, INFORMS SF⭐</i>
@@ -179,50 +203,63 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
             [<a href="https://x.com/ishapuri101/status/2037529925360500858" target="_blank" rel="noopener noreferrer">Tweet</a>]
             [<a href="https://github.com/ishapuri/multi_answer_rl">Code</a>]
             [<a href="https://multi-answer-rl.github.io/" target="_blank" rel="noopener noreferrer">Project Website</a>]
-  
-        </li>
-        <br>
-        
-        <li>
+          </div>
+        </div>
+      </li>
+      <br>
+
+      <li>
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/consistency_teaser.png" alt="Self-Consistency teaser">
+          <div class="publication-details">
             <a href="https://time-for-consistency.github.io/" target="_blank" rel="noopener noreferrer">Position: It's Time to Optimize for Self-Consistency</a><br>
             Itamar Pres, Belinda Li, Laura Ruis, Carl Guo, Keya Hu, Mehul Damani, <strong>Isha Puri</strong>, Ekdeep Lubana, Jacob Andreas<br>
             <i>ICML 2026</i>
             <br>[<a href="https://time-for-consistency.github.io/assets/pdfs/Consistency_Pos_Paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a>][<a href="https://time-for-consistency.github.io/" target="_blank" rel="noopener noreferrer">Website</a>][<a href="https://x.com/PresItamar/status/2029622543313678519" target="_blank" rel="noopener noreferrer">Tweet</a>]
-        </li>
-        
-      
+          </div>
+        </div>
+      </li>
+      <br>
+
       <li class="selected-publication" data-needs-break-after="true">
-        <br>
-        <a href="https://rl-calibration.github.io/" target="_blank" rel="noopener noreferrer">
-                Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty
-            </a>
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/rlcr_teaser.png" alt="RLCR teaser">
+          <div class="publication-details">
+            <a href="https://rl-calibration.github.io/" target="_blank" rel="noopener noreferrer">Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty</a>
             <br>Mehul Damani*, <strong>Isha Puri*</strong>, Stewart Slocum, Idan Shenfeld, Leshem Choshen, Yoon Kim, Jacob Andreas
             <br>*=equal contribution
             <br><i>ICLR 2026, SCALR@COLM ⭐Spotlight Oral⭐ 2025</i>
             <br><i>⭐Talks @ NVIDIA, UT Austin, COLM, IBM⭐</i><br>
-
             [<a href="https://arxiv.org/abs/2507.16806" target="_blank" rel="noopener noreferrer">ArXiv</a>]
             [<a href="https://x.com/MehulDamani2/status/1948069173294481877" target="_blank" rel="noopener noreferrer">Tweet</a>]
             [<a href="https://github.com/damanimehul/RLCR" target="_blank" rel="noopener noreferrer">Code</a>]
             [<a href="https://rl-calibration.github.io/" target="_blank" rel="noopener noreferrer">Project Website</a>]
             [<a href="https://rl-calibration.github.io/#Slides" target="_blank" rel="noopener noreferrer">Slides</a>]
-        </li>
-        <br>
-        
-        <li>
-            <a href="https://medpair.csail.mit.edu/" target="_blank" rel="noopener noreferrer">
-                MedPAIR: Measuring Physicians and AI Relevance Alignment in Medical Question Answering
-            </a>
+          </div>
+        </div>
+      </li>
+      <br>
+
+      <li>
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/medpair_teaser.png" alt="MedPAIR teaser">
+          <div class="publication-details">
+            <a href="https://medpair.csail.mit.edu/" target="_blank" rel="noopener noreferrer">MedPAIR: Measuring Physicians and AI Relevance Alignment in Medical Question Answering</a>
             <br>Yuexing Hao, Kumail Alhamoud, Hyewon Jeong, Haoran Zhang, <strong>Isha Puri</strong>, Philip Torr, Mike Schaekermann, Ariel D. Stern, Marzyeh Ghassemi
             <br><i>KDD Workshop on Trust & Evaluation in GenAI, COLM Socially Responsible LMs Workshop, 2025</i>
             <br>[<a href="https://medpair.csail.mit.edu/" target="_blank" rel="noopener noreferrer">Project Website</a>]
             [<a href="https://arxiv.org/abs/2505.24040" target="_blank" rel="noopener noreferrer">ArXiv</a>]
             [<a href="https://github.com/YuexingHao/MedPAIR" target="_blank" rel="noopener noreferrer">Code</a>]
-        </li>
-        <br>
-        <li class="selected-publication" data-needs-break-after="true">
-            <a href="https://probabilistic-inference-scaling.github.io/" target="_blank" rel="noopener noreferrer">Rollout Roulette: A Probabilistic Inference Approach to LLM Inference-Time Scaling with Particle-Based Monte Carlo Methods
-            </a>
+          </div>
+        </div>
+      </li>
+      <br>
+
+      <li class="selected-publication" data-needs-break-after="true">
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/rollout_roulette_teaser.png" alt="Rollout Roulette teaser">
+          <div class="publication-details">
+            <a href="https://probabilistic-inference-scaling.github.io/" target="_blank" rel="noopener noreferrer">Rollout Roulette: A Probabilistic Inference Approach to LLM Inference-Time Scaling with Particle-Based Monte Carlo Methods</a>
             <br><strong>Isha Puri</strong>, Shiv Sudalairaj, GX Xu, Kai Xu, Akash Srivastava
             <br><i>NeurIPS 2025, SCALR@COLM 2025</i>
             <br><i>⭐Talks @ Stanford, University of Cambridge, MIT EI Seminar, IBM Research AI, Cohere AI⭐</i>
@@ -233,43 +270,70 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
             [<a href="https://www.youtube.com/watch?v=gaRyGLFI2YA" target="_blank" rel="noopener noreferrer">Talk</a>]
             [<a href="/assets/pdfs/pf_inf_scaling_nenlp_poster.pdf" target="_blank" rel="noopener noreferrer">Poster</a>]
             [<a href="/assets/pdfs/pf_inf_scale_talk_updated.pdf" target="_blank" rel="noopener noreferrer">Slides</a>]
-        </li>
-        <br>
-        <li>
-            <a href="https://arxiv.org/abs/2405.12021" target="_blank" rel="noopener noreferrer">Can AI Relate: Testing Large Language Model Response for Mental Health Support
-            </a>
+          </div>
+        </div>
+      </li>
+      <br>
+
+      <li>
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/can_ai_relate_teaser.png" alt="Can AI Relate teaser">
+          <div class="publication-details">
+            <a href="https://arxiv.org/abs/2405.12021" target="_blank" rel="noopener noreferrer">Can AI Relate: Testing Large Language Model Response for Mental Health Support</a>
             <br>Saadia Gabriel, <strong>Isha Puri</strong>, Xuhai Xu, Matteo Malgaroli, Marzyeh Ghassemi
             <br><i>EMNLP Findings, 2024</i>
             <br>[<a href="https://news.mit.edu/2024/study-reveals-ai-chatbots-can-detect-race-but-racial-bias-reduces-response-empathy-1216" target="_blank" rel="noopener noreferrer">MIT News</a>]
             [<a href="https://arxiv.org/abs/2405.12021" target="_blank" rel="noopener noreferrer">ArXiv</a>]
             [<a href="https://github.com/skgabriel/mh-eval" target="_blank" rel="noopener noreferrer">Code</a>]
-        </li>
-        <br>
-        <li>
-            <a href="https://arxiv.org/abs/2402.08225" target="_blank" rel="noopener noreferrer">LLM Test Time Augmentation: Improving Black-box Robustness with In-Context Rewriting
-            </a>
+          </div>
+        </div>
+      </li>
+      <br>
+
+      <li>
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/llm_tta_teaser.png" alt="LLM TTA teaser">
+          <div class="publication-details">
+            <a href="https://arxiv.org/abs/2402.08225" target="_blank" rel="noopener noreferrer">LLM Test Time Augmentation: Improving Black-box Robustness with In-Context Rewriting</a>
             <br>Kyle O'Brien, Nathan Ng, <strong>Isha Puri</strong>, Jorge Mendez, Hamid Palangi, Yoon Kim, Marzyeh Ghassemi, Thomas Hartvigsen
             <br><i>Transactions on Machine Learning Research (TMLR), 2024</i>
             <br>[<a href="https://arxiv.org/abs/2402.08225" target="_blank" rel="noopener noreferrer">ArXiv</a>]
             [<a href="https://github.com/Kyle1668/LLM-TTA" target="_blank" rel="noopener noreferrer">Code</a>]
-        </li>
-        <br>
-    
-        <li>
+          </div>
+        </div>
+      </li>
+      <br>
+
+      <li>
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/causal_reasoning_teaser.png" alt="Causal Reasoning teaser">
+          <div class="publication-details">
             <span style="color: #0000EE;">Evaluating the Causal Reasoning Capabilities of Language Models</span>
             <br><strong>Isha Puri</strong>, Hima Lakkaraju
             <br><i>ICML Knowledge & Reasoning Workshop, 2023</i>
-        </li>
-        <br>
-        <li>
+          </div>
+        </div>
+      </li>
+      <br>
+
+      <li>
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/openxai_teaser.png" alt="OpenXAI teaser">
+          <div class="publication-details">
             <a href="https://arxiv.org/abs/2206.11104.pdf" target="_blank" rel="noopener noreferrer">OpenXAI: Towards a Transparent Evaluation of Model Explanations</a>
             <br>Chirag Agarwal, Satyapriya Krishna, Eshika Saxena, Martin Pawelczyk, Nari Johnson, <strong>Isha Puri</strong>, Marinka Zitnik, and Himabindu Lakkaraju
             <br><i>NeurIPS, 2022</i>  &nbsp;&nbsp;&nbsp;&nbsp; <i>ICLR Pair2Struct Workshop Oral Presentation</i>
             <br>[<a href="https://github.com/AI4LIFE-GROUP/OpenXAI" target="_blank" rel="noopener noreferrer">Github</a>]
             [<a href="https://open-xai.github.io/" target="_blank" rel="noopener noreferrer">Website</a>]
-        </li>
-        <br>
-        <li class="selected-publication">
+          </div>
+        </div>
+      </li>
+      <br>
+
+      <li class="selected-publication">
+        <div class="publication-item">
+          <img class="teaser-img" src="/assets/images/teasers/cofrnets_teaser.png" alt="CoFrNets teaser">
+          <div class="publication-details">
             <a href="https://arxiv.org/abs/2506.05586" target="_blank" rel="noopener noreferrer">CoFrNets: Interpretable Neural Architecture Inspired by Continued Fractions</a>
             <br><strong>Isha Puri</strong>, Amit Dhurandhar, Tejaswini Pedapati, Kartikeyan Shanmugam, Dennis Wei, and Kush R. Varshney
             <br><i>NeurIPS, 2021</i>
@@ -277,14 +341,11 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
             [<a href="https://arxiv.org/abs/2506.05586" target="_blank" rel="noopener noreferrer">ArXiv</a>]
             [<a href="https://papertalk.org/papertalks/36931" target="_blank" rel="noopener noreferrer">Video</a>]
             [<a href="https://proceedings.neurips.cc/paper/2021/file/b538f279cb2ca36268b23f557a831508-Supplemental.pdf" target="_blank" rel="noopener noreferrer">Supplement</a>]
-        </li>
-        <br>
-        <!-- <br>
-        <li>
-            <span style="color: #0000EE;">DYSCERN - A Scalable, Freely Accessible Machine Learning Application for the Early Detection of Dyslexia</span>
-            <br><strong>Isha Puri</strong>, 20
-            <br>[<a href="https://ishapuri.github.io/dyscern_video.html" target="_blank" rel="noopener noreferrer">Project Video + Demo</a>]
-        </li> -->
+          </div>
+        </div>
+      </li>
+      <br>
+
     </ul>
 </div>
 </details> 
