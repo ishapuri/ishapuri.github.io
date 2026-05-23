@@ -353,28 +353,30 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
 
 <br>
 
-<details id=”awards-details”>
-<summary style=”display: list-item; list-style-type: disclosure-open;”><h2>Awards / Honors</h2></summary>
-<div style=”border: 2px solid #ccc; border-radius: 10px; overflow-y: scroll; height: 100px; padding: 10px; scrollbar-width: auto;”>
-  <ul>
-      <li> MIT Great Educators Fellowship <br> (MIT EECS)</li>
-      <li> National Science Foundation Graduate Research Fellowship </li>
-      <li> Harvard Technology Innovation Fellow <br> (Harvard Business School)</li>
-      <li> Kempner Institute Graduate Fellowship (6 years, fully funded PhD) (Declined) <br> (Harvard University)</li>
-      <li> Gordon Wu Fellowship (5 year fellowship) (Declined) <br> (Princeton University)</li>
-      <li> Derek Bok Award for Distinction in Teaching <br> (Harvard University)</li>
-      <li> ACM Cutler Bell Prize for Excellence in Computing Research <br> (Association of Computing Machinery) (4 selected nationwide)</li>
-      <li> Davidson Fellowship <br> (Recognized by Forbes as “World’s Most Prestigious Undergraduate Scholarship”)</li>
-      <li> Donald and Kathleen Pfister Prize for Excellence in the Sciences  <br> (Harvard University)</li>
-      <li> ThermoFisher Scientific Collegiate Fellowship <br>(6 chosen nationwide)</li>
-      <li> NCWIT Collegiate Prize <br> (National Center for Women in Information Technology, 6 selected nationwide)</li>
-      <li> Coca Cola Scholarship <br>(250 chosen from > 90,000 applications)</li>
-      <!-- <li> Forbes, 20 of America’s Brightest Students (2019)</li> -->
-      <li> Google Science Fair Global Finalist (20 worldwide)</li>
-      <li> Intel ISEF Grand Award Winner (2nd Place) <br> (International Science and Engineering Fair 2018) </li>
-      <li> National Security Agency Mathematics Honor Award</li>
-  </ul>
-</div>
+<details id="awards-details">
+  <summary style="display: list-item; list-style-type: disclosure-open;">
+    <h2>Awards / Honors</h2>
+  </summary>
+
+  <div id="awards-scroll-box" style="border: 2px solid #ccc; border-radius: 10px; overflow-y: scroll; height: 190px; padding: 10px; scrollbar-width: auto;">
+    <ul style="margin: 0; padding-left: 22px;">
+      <li>MIT Great Educators Fellowship <br> (MIT EECS)</li>
+      <li>National Science Foundation Graduate Research Fellowship</li>
+      <li>Harvard Technology Innovation Fellow <br> (Harvard Business School)</li>
+      <li>Kempner Institute Graduate Fellowship (6 years, fully funded PhD) (Declined) <br> (Harvard University)</li>
+      <li>Gordon Wu Fellowship (5 year fellowship) (Declined) <br> (Princeton University)</li>
+      <li>Derek Bok Award for Distinction in Teaching <br> (Harvard University)</li>
+      <li>ACM Cutler Bell Prize for Excellence in Computing Research <br> (Association of Computing Machinery) (4 selected nationwide)</li>
+      <li>Davidson Fellowship <br> (Recognized by Forbes as “World’s Most Prestigious Undergraduate Scholarship”)</li>
+      <li>Donald and Kathleen Pfister Prize for Excellence in the Sciences <br> (Harvard University)</li>
+      <li>ThermoFisher Scientific Collegiate Fellowship <br> (6 chosen nationwide)</li>
+      <li>NCWIT Collegiate Prize <br> (National Center for Women in Information Technology, 6 selected nationwide)</li>
+      <li>Coca Cola Scholarship <br> (250 chosen from &gt; 90,000 applications)</li>
+      <li>Google Science Fair Global Finalist (20 worldwide)</li>
+      <li>Intel ISEF Grand Award Winner (2nd Place) <br> (International Science and Engineering Fair 2018)</li>
+      <li>National Security Agency Mathematics Honor Award</li>
+    </ul>
+  </div>
 </details>
 
 <br>
@@ -405,22 +407,6 @@ Outside of research, I:
   gtag('config', 'G-LMMBHBT8FJ');
 </script>
 
-<script>
-  window.addEventListener('load', function() {
-    const awardsDetails = document.getElementById('awards-details');
-    const awardsBox = document.getElementById('awards-scroll-box');
-    if (awardsDetails && awardsBox) {
-      function applyAwardsScrollbox() {
-        if (awardsDetails.open) {
-          awardsBox.style.setProperty('overflow-y', 'scroll', 'important');
-          awardsBox.style.setProperty('height', '300px', 'important');
-          awardsBox.style.setProperty('max-height', '300px', 'important');
-        }
-      }
-      awardsDetails.addEventListener('toggle', applyAwardsScrollbox);
-      applyAwardsScrollbox();
-    }
-  });
 
   window.addEventListener('load', function() {
     let showSelectedOnly = true; // Default to on
