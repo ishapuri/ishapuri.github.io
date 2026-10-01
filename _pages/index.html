@@ -123,7 +123,7 @@ You can reach me at ishapuri@mit.edu. I'd love to hear from you!
   <!-- LEFT: NEWS LIST -->
   <div class="scroll-box left-column">
     <ul>
-      <li>[Oct '26] Invited talk (llm uncertainty in decision making) @ INFORMS</li>
+      <li id="first-news-item">[Oct '26] Invited talk (llm uncertainty, decision making) @ INFORMS</li>
       <li>[June '26] Starting internship at Google</li>
       <li>[April '26] New papers [<a href="https://multi-answer-rl.github.io/" target="_blank" rel="noopener noreferrer">Multi-RLVR</a>, <a href="https://arxiv.org/abs/2605.22817" target="_blank" rel="noopener noreferrer">VPO</a>] on RL for diversity</li>
       <li>[Nov '25] Talks about RLCR @ NVIDIA, UT Austin</li>
@@ -475,5 +475,36 @@ Outside of research, I:
     });
 
     applyFilter();
+  })();
+</script>
+
+<script>
+  (function() {
+    function sizeNewsColumn() {
+      var leftColumn = document.querySelector('.scroll-container .left-column');
+      var firstItem = document.getElementById('first-news-item');
+      if (!leftColumn || !firstItem) return;
+
+      var measureLi = firstItem.cloneNode(true);
+      measureLi.style.whiteSpace = 'nowrap';
+
+      var measureUl = firstItem.parentElement.cloneNode(false);
+      measureUl.style.position = 'absolute';
+      measureUl.style.visibility = 'hidden';
+      measureUl.style.width = 'auto';
+      measureUl.style.maxHeight = 'none';
+      measureUl.style.overflow = 'visible';
+      measureUl.appendChild(measureLi);
+      document.body.appendChild(measureUl);
+
+      var neededWidth = measureUl.scrollWidth;
+      document.body.removeChild(measureUl);
+
+      var scrollbarWidth = leftColumn.offsetWidth - leftColumn.clientWidth;
+      leftColumn.style.width = (neededWidth + scrollbarWidth + 2) + 'px';
+      leftColumn.style.flex = 'none';
+    }
+
+    window.addEventListener('load', sizeNewsColumn);
   })();
 </script>
